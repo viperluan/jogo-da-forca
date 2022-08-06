@@ -1,8 +1,10 @@
 #include <iostream>
 
+#include "./entities/Word/Word.h"
+
 int main()
 {
-  std::cout << "Hello world";
+  Word *word = new Word();
 
   return 0;
 }
