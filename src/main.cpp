@@ -1,10 +1,12 @@
 #include <iostream>
 
-#include "./entities/Word/Word.h"
+#include "./entities/Player/Player.h"
 
 int main()
 {
-  Word *word = new Word();
+  Player *player = new Player(5);
+
+  std::cout << "Seu nome é: " << player->getName();
 
   return 0;
 }
