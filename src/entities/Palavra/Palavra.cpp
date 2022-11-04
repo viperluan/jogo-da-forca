@@ -1,7 +1,5 @@
 #include "./Palavra.h"
 
-#include <iostream>
-
 Palavra::Palavra(const char nome[], int tamanhoNome, const char dica[], int tamanhoDica)
 {
   this->nome = nome;

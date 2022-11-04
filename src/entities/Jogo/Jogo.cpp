@@ -1,4 +1,3 @@
-#include <iostream>
 #include "./Jogo.h"
 
 Jogo::Jogo(Jogador *jogador, Palavra *palavra, int numeroDeChances)

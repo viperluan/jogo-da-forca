@@ -1,7 +1,5 @@
 #include "Jogador.h"
 
-#include <iostream>
-
 Jogador::Jogador(const char nome[], int tamanhoNome, char letrasDigitadas[], int tamanhoLetrasDigitadas)
 {
   this->nome = nome;
