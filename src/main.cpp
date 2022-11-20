@@ -2,25 +2,36 @@
 #include "./entities/Jogador/Jogador.h"
 #include "./entities/Palavra/Palavra.h"
 #include "./entities/Jogo/Jogo.h"
+#include "./entities/InterfaceUsuario/InterfaceUsuario.h"
 
 using std::cin;
 using std::cout;
 
 int main()
 {
-  char palavraArray[40] = "Batata";
-  char dica[400] = "É um legume.";
-  char nome[40] = "Luan";
-  char letrasDigitadas[11] = {'\0'};
-  int chances = 5;
+  char palavraAtual[] = "banana";
+  char letraAtual;
+  char dica[] = "É uma fruta.";
+  char nomeJogador[] = "Luan";
+  char letrasDigitadas[11] = {};
+  int numeroDeChances = 5;
 
-  Jogador *jogador = new Jogador(nome, sizeof(nome), letrasDigitadas, sizeof(letrasDigitadas));
-  Palavra *palavra = new Palavra(palavraArray, sizeof(palavraArray), dica, sizeof(dica));
-  Jogo *jogo = new Jogo(jogador, palavra, chances);
+  Jogador *jogador = new Jogador(nomeJogador, sizeof(nomeJogador), letrasDigitadas, sizeof(letrasDigitadas));
+  Palavra *palavra = new Palavra(palavraAtual, sizeof(palavraAtual), dica, sizeof(dica));
+  Jogo *jogo = new Jogo(jogador, palavra, numeroDeChances);
 
   while (jogo->getChances() > 0)
   {
-    cout << jogo->getJogador()->getNome() << '\n';
+    system("clear");
+    cout << dica << "\n\n";
+    InterfaceUsuario::mostraPalavra(palavra, jogador);
+    cout << "\n\n";
+
+    cout << "Chances: " << jogo->getChances() << '\n';
+    cout << "Digite uma letra: ";
+    cin >> letraAtual;
+    jogador->setLetraDigitada(letraAtual);
+
     jogo->setChances();
   }
 
