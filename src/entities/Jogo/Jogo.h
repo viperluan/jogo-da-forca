@@ -22,6 +22,7 @@ public:
   int getChances();
   void setChances();
   void setNovaRodada();
+  bool getRodando();
 };
 
 #endif

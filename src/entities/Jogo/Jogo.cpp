@@ -2,6 +2,7 @@
 
 Jogo::Jogo(Jogador *jogador, Palavra *palavra, int numeroDeChances)
 {
+  this->rodando = true;
   this->jogador = jogador;
   this->palavra = palavra;
   this->chances = numeroDeChances;
@@ -42,4 +43,12 @@ void Jogo::setChances()
 void Jogo::setNovaRodada()
 {
   this->rodada++;
+}
+
+bool Jogo::getRodando()
+{
+  if (this->chances < 1)
+    this->rodando = false;
+
+  return this->rodando;
 }
